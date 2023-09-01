@@ -1,0 +1,37 @@
+<%- include ('./template/head.ejs') -%>
+<body>
+    <div>
+        <%- include ('./template/nav.ejs')
+        <main>
+            <div>
+                <h1>Courses</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Course Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%table.forEach(function(e) {%>
+                            <tr>
+                                <td>
+                                    <%=e.name%>
+                                </td>
+                                <td>
+                                    <%=e.description%>
+                                </td>
+                            </tr>
+                        <%})%>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <%- include ('./template/footer.ejs') -%>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        document.elementById('courses').classList.add('active')
+    }
+</script>
